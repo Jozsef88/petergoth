@@ -8,6 +8,7 @@ import { faFacebookF, faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faChevronRight, faClipboardList, faDumbbell, faEnvelope, faUser } from "@fortawesome/free-solid-svg-icons";
 import { faArrowRight, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { AnimatePresence, motion, useMotionTemplate, useScroll, useSpring, useTransform } from "framer-motion";
+import { useEffect } from "react";
 
 const navLinks = [
   { label: "RÓLAM", href: "#about" },
@@ -24,6 +25,30 @@ const mobileLinks = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    if (open) {
+      const scrollY = window.scrollY;
+      document.body.style.overflow = "hidden";
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = "100%";
+    } else {
+      const top = document.body.style.top;
+      document.body.style.overflow = "";
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+      if (top) window.scrollTo(0, -parseInt(top));
+    }
+    return () => {
+      document.body.style.overflow = "";
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+    };
+  }, [open]);
+
   const { scrollY } = useScroll();
 
   const blurProgress = useTransform(scrollY, [0, 180], [0, 1]);
@@ -132,7 +157,7 @@ export default function Navbar() {
             onClick={() => setOpen(false)}
           >
             <motion.nav
-              className="relative h-full w-full overflow-hidden rounded-[24px] border-[0.5px] border-[rgba(110,242,178,0.25)] bg-cover bg-center px-5 py-4 shadow-[0_16px_48px_rgba(2,8,9,0.62)]"
+              className="relative flex h-full w-full flex-col overflow-hidden rounded-[24px] border-[0.5px] border-[rgba(110,242,178,0.25)] bg-cover bg-center px-5 py-4 shadow-[0_16px_48px_rgba(2,8,9,0.62)]"
               style={{
                 backgroundImage:
                   "linear-gradient(140deg, rgba(7,14,19,0.34), rgba(4,10,14,0.34)), url('/menu_bg.png')",
@@ -169,10 +194,11 @@ export default function Navbar() {
                 <button
                   type="button"
                   onClick={() => setOpen(false)}
-                  className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[rgba(110,242,178,0.5)] bg-[rgba(12,20,24,0.86)] text-[#6ef2b2] shadow-[0_0_0_1px_rgba(110,242,178,0.18)_inset]"
+                  className="relative inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[rgba(110,242,178,0.5)] bg-[rgba(12,20,24,0.86)] text-[#6ef2b2] shadow-[0_0_0_1px_rgba(110,242,178,0.18)_inset]"
                   aria-label="Menü bezárása"
                 >
-                  <span className="text-[1.8rem] leading-none">×</span>
+                  <span className="absolute block h-[2px] w-5 rotate-45 bg-[#6ef2b2]" />
+                  <span className="absolute block h-[2px] w-5 -rotate-45 bg-[#6ef2b2]" />
                 </button>
               </div>
 
@@ -220,7 +246,7 @@ export default function Navbar() {
                 </div>
               </div>
 
-              <div className="relative z-10 mt-7 flex items-center gap-4 text-[#7f8e99]">
+              <div className="relative z-10 mt-auto flex items-center gap-4 text-[#7f8e99]">
                 <span className="h-px flex-1 bg-[rgba(255,255,255,0.22)]" />
                 <span className="text-[0.95rem] font-semibold uppercase tracking-[0.09em]">Kövess itt is</span>
                 <span className="h-px flex-1 bg-[rgba(255,255,255,0.22)]" />
