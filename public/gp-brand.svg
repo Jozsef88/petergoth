@@ -1,0 +1,17 @@
+<svg width="360" height="62" viewBox="0 0 360 62" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g" x1="6" y1="6" x2="52" y2="46" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#9CEFD0"/>
+      <stop offset="1" stop-color="#5CCFA7"/>
+    </linearGradient>
+  </defs>
+
+  <g transform="translate(2 1)">
+    <path d="M36.8 8.5H22.4C13.8 8.5 8.2 14 8.2 22.2C8.2 30.4 13.8 35.8 22.4 35.8H33.2V28.4H22.8C18.2 28.4 15.8 25.8 15.8 22.2C15.8 18.6 18.2 16 22.8 16H36.8V8.5Z" fill="url(#g)"/>
+    <path d="M31.6 8.5H39.8V21.4H48.2C56.6 21.4 62 26.7 62 34.8C62 42.9 56.6 48.3 48.2 48.3H35.9V40.9H47.8C52.2 40.9 54.4 38.4 54.4 34.8C54.4 31.1 52.2 28.7 47.8 28.7H31.6V8.5Z" fill="url(#g)"/>
+    <rect x="31.6" y="21.2" width="8.2" height="7.6" fill="url(#g)"/>
+  </g>
+
+  <text x="82" y="29" fill="#F2F4F5" font-family="Inter, Arial, sans-serif" font-size="36" font-weight="700" letter-spacing="0.4">GÖTH PÉTER</text>
+  <text x="83" y="50" fill="#B7BEC4" font-family="Inter, Arial, sans-serif" font-size="11.5" font-weight="500" letter-spacing="3.8">SZEMÉLYI EDZŐ</text>
+</svg>
