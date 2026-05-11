@@ -46,7 +46,7 @@ export default function MapBox({ lat, lng, zoom = 16, height = 420 }: Props) {
       mapInstance.current = map;
 
       // Custom anchored overlay (halo + pin)
-      function CustomOverlay(position: any, mapObj: any) {
+      function CustomOverlay(this: any, position: any, mapObj: any) {
         this.position = position;
         this.map = mapObj;
         this.div = null;
