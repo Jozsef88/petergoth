@@ -13,14 +13,14 @@ import { useEffect } from "react";
 const navLinks = [
   { label: "RÓLAM", href: "#about" },
   { label: "MIRE SZÁMÍTHATSZ", href: "#what-to-expect" },
-  { label: "JELENTKEZÉS", href: "#form" },
+  { label: "ÁRAK", href: "#pricing" },
 ];
 
 const mobileLinks = [
-  { label: "Rólam", href: "#about", icon: faUser },
-  { label: "Szolgáltatások", href: "#problem", icon: faDumbbell },
-  { label: "Folyamat", href: "#what-to-expect", icon: faClipboardList },
-  { label: "Kapcsolat", href: "#contact", icon: faEnvelope },
+  { label: "RÓLAM", href: "#about", icon: faUser },
+  { label: "MIRE SZÁMÍTHATSZ", href: "#what-to-expect", icon: faClipboardList },
+  { label: "ÁRAK", href: "#pricing", icon: faClipboardList },
+  { label: "KAPCSOLAT", href: "#contact", icon: faEnvelope },
 ];
 
 export default function Navbar() {
@@ -225,26 +225,6 @@ export default function Navbar() {
                   </motion.li>
                 ))}
               </ul>
-
-              <div className="relative z-10 mt-6 rounded-2xl border border-[rgba(110,242,178,0.35)] bg-[rgba(7,14,18,0.72)] p-4">
-                <div className="flex items-center gap-4">
-                  <span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[rgba(110,242,178,0.35)] text-[#6ef2b2]">
-                    <FontAwesomeIcon icon={faPhone} aria-hidden="true" className="text-[1.15rem]" />
-                  </span>
-                  <div className="min-w-0 flex-1">
-                    <p className="text-base font-semibold leading-tight text-white">Készen állsz a változásra?</p>
-                    <p className="mt-1 text-[11px] leading-snug text-[#a8bac7]">Írj nekem és kezdjük el együtt a közös munkát!</p>
-                  </div>
-                  <Link
-                    href="#contact"
-                    onClick={() => setOpen(false)}
-                    className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#5ce5a4] text-black"
-                    aria-label="Kapcsolat"
-                  >
-                    <FontAwesomeIcon icon={faArrowRight} aria-hidden="true" className="text-[1.1rem]" />
-                  </Link>
-                </div>
-              </div>
 
               <div className="relative z-10 mt-auto flex items-center gap-4 text-[#7f8e99]">
                 <span className="h-px flex-1 bg-[rgba(255,255,255,0.22)]" />

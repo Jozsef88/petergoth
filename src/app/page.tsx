@@ -1,11 +1,11 @@
 import Navbar from "@/components/Navbar";
 import About from "@/components/sections/About";
 import Contact from "@/components/sections/Contact";
-import Form from "@/components/sections/Form";
 import Hero from "@/components/sections/Hero";
 import Problem from "@/components/sections/Problem";
 import Stats from "@/components/sections/Stats";
 import WhatToExpect from "@/components/sections/WhatToExpect";
+import Pricing from "@/components/sections/Pricing";
 
 export default function HomePage() {
   return (
@@ -19,7 +19,7 @@ export default function HomePage() {
           <About />
           <Stats />
           <WhatToExpect />
-          <Form />
+          <Pricing />
           <Contact />
         </div>
       </main>
